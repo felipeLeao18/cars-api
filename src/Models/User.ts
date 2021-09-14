@@ -4,6 +4,7 @@ import bcrypt from 'bcryptjs'
 
 export interface IUser extends Document {
     name: string,
+    last_name: string,
     email: string,
     password: string,
     admin?: boolean
@@ -13,6 +14,7 @@ export interface IUser extends Document {
 const UserSchema = new Schema({
 
   name: { type: String },
+  last_name: {type: String},
   email: { type: String },
   password: { type: String },
   admin: {type: Boolean, default: false},
