@@ -17,3 +17,13 @@ export async function getCarDb(carId: string): Promise<ICar | null>{
     if (!isCar) throw new Error("Car is not on the system")
     return isCar
 }
+
+
+export async function getCarsDb(): Promise<ICar[]>{
+    const cars = await Car.find()
+    if (!cars) throw new Error("there aren't any cars here!")
+
+    return cars
+
+
+}

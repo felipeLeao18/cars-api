@@ -1,6 +1,6 @@
 import {Request, Response } from 'express';
 import {
-insertCarDb,getCarDb
+insertCarDb,getCarDb, getCarsDb
 } from '../Services/CarServices'
 
 export async function insertCar(req:Request, res: Response): Promise<Response>{
@@ -15,7 +15,18 @@ export async function insertCar(req:Request, res: Response): Promise<Response>{
 export async function getCar(req: Request, res: Response): Promise<Response>{
     const car = await getCarDb(req.params.carId)
     return res.json({
-        message: 'car',
+        message: 'Car',
         car
     })
+}
+
+export async function getCars(req: Request, res: Response): Promise<Response>{
+    const cars = await getCarsDb()
+
+    return res.json({
+        message: 'All Cars are here',
+        cars: cars
+    })
+
+
 }
