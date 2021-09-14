@@ -24,8 +24,8 @@
 - enter: yarn dev
 
 ### Router:
-- <b>[POST] </b> /users ❌
-- <b>[POST] </b> /users/login ❌ 
+- <b>[POST] </b> /user ❌
+- <b>[POST] </b> /user/login ❌ 
 - <b>[POST] </b> /cars ✔️
 - <b>[GET] </b> /cars ✔️
 - <b>[GET] </b> /cars/carId ✔️ 
