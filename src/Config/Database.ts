@@ -1,0 +1,2 @@
+const connectionDb = ''
+export {connectionDb}
