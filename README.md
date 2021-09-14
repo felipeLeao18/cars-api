@@ -30,7 +30,7 @@
 - <b>[GET] </b> /cars ✔️
 - <b>[GET] </b> /cars/carId ✔️ 
 - <b>[Delete] </b> /cars/carId ✔️
-- <b>[PATCH] </b> /cars/carId ✔️
+- <b>[PATCH] </b> /cars/carId ❌
 - <b>[Post] </b> cars/ratings/carId ❌
 - <b>[GET] </b> cars/ratings ❌ 
 - <b>[GET] </b> cars/ratings/carId ❌ 
