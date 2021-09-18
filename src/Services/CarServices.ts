@@ -7,6 +7,7 @@ export async function insertCarDb({brand,model,year,fuel,color}: ICar): Promise<
    
     const newCar = new Car({brand,model,year,fuel,color})
     await newCar.save()
+
     return newCar
 
 }
@@ -22,6 +23,7 @@ export async function getCarDb(carId: string): Promise<ICar | null>{
 export async function getCarsDb(): Promise<ICar[]>{
     const cars = await Car.find()
     if (!cars) throw new Error("there aren't any cars here!")
+    
     return cars
 }
 
@@ -29,4 +31,21 @@ export async function deleteCarDb(carId: string): Promise<ICar | null>{
     const isCar = await Car.findByIdAndDelete(carId)
     if(!isCar) throw new Error("Car doesn't exists or is not available anymore")
     return isCar
+}
+
+
+export async function updateCarDb (carId: string, {...body })  {
+
+    if (!carId) {
+      throw new Error("Car was not found")
+    }
+  
+    const updatedCar = await Car.findByIdAndUpdate(carId, body, { new: true })
+  
+    if (!updatedCar) {
+      throw new Error('Something was wrong while updating car')
+    }
+  
+    return updatedCar
+  
 }

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { insertCarDb, getCarDb, getCarsDb, deleteCarDb } from "../Services/CarServices";
+import { insertCarDb, getCarDb, getCarsDb, deleteCarDb, updateCarDb } from "../Services/CarServices";
 
 export async function insertCar(
   req: Request,
@@ -37,4 +37,14 @@ export async function deleteCar(req: Request, res: Response): Promise <Response>
         car
     })
 
+}
+
+export async function updateCar(req: Request, res: Response): Promise<Response> {
+  const newCar = await updateCarDb(req.params.carId,req.body)
+
+  return res.json({
+    message: 'Car updated',
+    newCar
+  })
+  
 }
