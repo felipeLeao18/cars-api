@@ -16,6 +16,7 @@ const CarSchema = new Schema ({
   fuel: {type: Number},
   color: { type: String},
   automatic:{type: Boolean, default: false},
+  grade: {type: Number, default: 0},
   created_at: { type: Date, default: Date.now },
   updated_at: {type: Date, default: Date.now}
 })
