@@ -34,13 +34,13 @@ export async function deleteCarDb(carId: string): Promise<ICar | null>{
 }
 
 
-export async function updateCarDb (carId: string, {...body })  {
+export async function updateCarDb (carId: string, {brand,model,year,fuel,color}: ICar): Promise<ICar>  {
 
     if (!carId) {
       throw new Error("Car was not found")
     }
   
-    const updatedCar = await Car.findByIdAndUpdate(carId, body, { new: true })
+    const updatedCar = await Car.findByIdAndUpdate(carId, {brand,model,year,fuel,color}, { new: true })
   
     if (!updatedCar) {
       throw new Error('Something was wrong while updating car')
