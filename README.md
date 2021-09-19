@@ -35,7 +35,7 @@
 - <b>[GET] </b> cars/ratings ❌ 
 - <b>[GET] </b> cars/ratings/carId ❌ 
 - <b>[DELETE] </b> cars/ratings/ratingId ❌
-- <b>[PATCH] </b> /cars/rating/ratingId
+- <b>[PATCH] </b> /cars/rating/ratingId ❌
 
 ------------------------------------------------------------------------------------
 
