@@ -1,6 +1,7 @@
 import { Schema, model, Document } from 'mongoose'
 
 export interface ICar extends Document {
+    image: string,
     brand: string,
     model: string,
     year: string,
@@ -10,13 +11,14 @@ export interface ICar extends Document {
 }
 
 const CarSchema = new Schema ({
+  image: {type: String},
   brand: { type: String },
   model: { type: String },
   year: { type: String },
   fuel: {type: Number},
   color: { type: String},
   automatic:{type: Boolean, default: false},
-  grade: {type: Number, default: 0},
+  average_grade: {type: Number, default: 0},
   created_at: { type: Date, default: Date.now },
   updated_at: {type: Date, default: Date.now}
 })
